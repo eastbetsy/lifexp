@@ -11,10 +11,28 @@
     <h1>Life XP 🎮</h1>
     <p class="subtitle">Level up your real life — one task at a time</p>
     <p class="subtitle">I have turned a simple boring checklist into a fun and rewarding task list for myself. Feel free to fork this project.</p>
+  <script src="https://unpkg.com/aws-amplify@5.3.7/dist/aws-amplify.min.js"></script>
+  <script src="script.js" defer></script>
 
   </header>
+  <body>
+    <section id="loginSection">
+    <h2>Life XP Login</h2>
+    <input type="email" id="loginEmail" placeholder="Email">
+    <input type="password" id="loginPassword" placeholder="Password">
+    <button onclick="signIn()">Login</button>
 
-<main>
+    <h3>Or Sign Up</h3>
+    <input type="email" id="signupEmail" placeholder="Email">
+    <input type="password" id="signupPassword" placeholder="Password">
+    <button onclick="signUp()">Create Account</button>
+  </section>
+
+  <section id="gameSection" style="display: none;">
+    <!-- your Life XP app here -->
+    <button onclick="signOut()">Logout</button>
+</section>
+    <main>
     <section class="stats">
       <div class="level">Level: <span id="level">1</span></div>
       <div class="xp-bar">
@@ -39,8 +57,9 @@
     <button id="nextDayBtn">Start Next Day 🔄</button>
     <p>Progress saves automatically 💾</p>
   </footer>
+  </body>
 
 
-  <script src="script.js"></script>
+
 </body>
 </html>

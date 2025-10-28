@@ -94,3 +94,67 @@ label input[type="checkbox"] {
   border-radius: 8px;
   cursor: pointer;
 }
+/* Login / Sign Up Section - Top Right */
+#loginSection {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 280px;
+  padding: 20px;
+  background: #1e1e2f;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  z-index: 1000;
+}
+
+#loginSection h2 {
+  margin-bottom: 15px;
+  font-size: 1.4em;
+  color: #1e3a8a; /* navy heading */
+}
+
+#loginSection h3 {
+  margin: 20px 0 10px;
+  font-weight: normal;
+  color: #ccc;
+  font-size: 0.9em;
+}
+
+#loginSection input[type="email"],
+#loginSection input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 6px 0;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 0.9em;
+  box-sizing: border-box;
+}
+
+#loginSection input::placeholder {
+  color: #aaa;
+}
+
+#loginSection button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  background: #1e3a8a; /* navy background */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  box-sizing: border-box;
+}
+
+#loginSection button:hover {
+  background: #162c6b; /* darker navy on hover */
+}

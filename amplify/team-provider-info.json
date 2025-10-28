@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-lifexp-dev-c3b68-authRole",
+      "UnauthRoleArn": "arn:aws:iam::680537322361:role/amplify-lifexp-dev-c3b68-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::680537322361:role/amplify-lifexp-dev-c3b68-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-lifexp-dev-c3b68-deployment",
+      "UnauthRoleName": "amplify-lifexp-dev-c3b68-unauthRole",
+      "StackName": "amplify-lifexp-dev-c3b68",
+      "StackId": "arn:aws:cloudformation:us-east-1:680537322361:stack/amplify-lifexp-dev-c3b68/92058850-b443-11f0-b338-0e4e52b481b3",
+      "AmplifyAppId": "d2bonxvt89tqti"
+    },
+    "categories": {
+      "api": {
+        "lifexp": {}
+      }
+    }
+  }
+}

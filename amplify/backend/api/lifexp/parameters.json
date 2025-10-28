@@ -1,0 +1,5 @@
+{
+  "AppSyncApiName": "lifexp",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false
+}

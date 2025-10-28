@@ -1,3 +1,5 @@
+import { UserManager } from "oidc-client-ts";
+
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 let xp = parseInt(localStorage.getItem('xp')) || 0;
 let level = parseInt(localStorage.getItem('level')) || 1;
@@ -91,3 +93,55 @@ nextDayBtn.addEventListener('click', () => {
 
 renderTasks();
 updateXPDisplay();
+
+// Initialize Amplify Auth
+const amplifyConfig = {
+  Auth: {
+    region: "us-east-1",
+    userPoolId: "us-east-1_ABC12345", // <-- your User Pool ID
+    userPoolWebClientId: "1a2b3c4d5e6f7g8h9i0j", // <-- your App Client ID
+  },
+};
+
+aws_amplify.Amplify.configure(amplifyConfig);
+const Auth = aws_amplify.Auth;
+
+// --- Signup Function ---
+async function signUp() {
+  const email = document.getElementById("signupEmail").value;
+  const password = document.getElementById("signupPassword").value;
+
+  try {
+    const { user } = await Auth.signUp({
+      username: email,
+      password,
+      attributes: { email },
+    });
+    alert("Signup successful! Please check your email for verification.");
+  } catch (error) {
+    alert(error.message);
+  }
+}
+
+// --- Login Function ---
+async function signIn() {
+  const email = document.getElementById("loginEmail").value;
+  const password = document.getElementById("loginPassword").value;
+
+  try {
+    const user = await Auth.signIn(email, password);
+    alert("Login successful!");
+    document.getElementById("loginSection").style.display = "none";
+    document.getElementById("gameSection").style.display = "block";
+  } catch (error) {
+    alert(error.message);
+  }
+}
+
+// --- Sign Out Function ---
+async function signOut() {
+  await Auth.signOut();
+  alert("Signed out!");
+  document.getElementById("gameSection").style.display = "none";
+  document.getElementById("loginSection").style.display = "block";
+}
